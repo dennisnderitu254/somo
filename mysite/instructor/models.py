@@ -11,7 +11,7 @@ class Instructor(models.Model):
 class Course(models.Model):
 	coursetitle = models.CharField(max_length=50)
 	courseid = models.IntegerField(primary_key=True)
-	description = models.CharField(max_length=250) 
+	# description = models.CharField(max_length=250) 
 
 
 
@@ -19,8 +19,8 @@ class Video(models.Model):
 	title = models.CharField(max_length=50)
 	description = models.CharField(max_length=150)
 	tags = models.CharField(max_length=50)
-	instructorid = models.ForeignKey(Instructor)
-	courseid = models.ForeignKey(Course)
+	instructorid = models.ForeignKey(Instructor, on_delete=models.CASCADE)
+	courseid = models.ForeignKey(Course, on_delete=models.CASCADE)
 
 
 

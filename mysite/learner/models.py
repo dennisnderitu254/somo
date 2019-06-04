@@ -15,9 +15,9 @@ class Instructor(models.Model):
 	instructor_email = models.EmailField(max_length=200)
 
 class CourseDuration(models.Model):
-	course_id = models.ForeignKey(Course)
-	learner_id = models.ForeignKey(Learner)
-	instructor_id = models.ForeignKey(Instructor)
+	course_id = models.ForeignKey(Course, on_delete=models.CASCADE)
+	learner_id = models.ForeignKey(Learner, on_delete=models.CASCADE)
+	instructor_id = models.ForeignKey(Instructor, on_delete=models.CASCADE)
 	course_duration = models.TimeField()
 
 
